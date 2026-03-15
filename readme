@@ -1,0 +1,109 @@
+# 🧬 ClinVar Variant Annotation Tool (Java)
+
+A simple **bioinformatics tool written in Java** that simulates a **ClinVar-like variant annotation system**.
+The program checks genetic variants against a small internal database and returns their **clinical significance**.
+
+This project demonstrates how bioinformatics pipelines annotate variants detected from sequencing data.
+
+---
+
+## 📌 Features
+
+* Variant annotation similar to ClinVar
+* Gene + mutation lookup
+* Simple Java implementation
+* Bioinformatics-focused project
+* Easy to extend for real genomic databases
+
+---
+
+## 🧪 Example Variants
+
+Input variants used in the program:
+
+```
+BRCA1,185delAG
+TP53,R175H
+CFTR,F508del
+BRCA2,6174delT
+EGFR,L858R
+```
+
+---
+
+## 📊 Example Output
+
+```
+Variant: BRCA1 185delAG -> Pathogenic
+Variant: TP53 R175H -> Likely Pathogenic
+Variant: CFTR F508del -> Pathogenic
+Variant: BRCA2 6174delT -> Pathogenic
+Variant: EGFR L858R -> Unknown significance
+```
+
+---
+
+## 🧠 How It Works
+
+1. The program stores known variants in a **HashMap database**.
+2. Each variant is represented as:
+
+```
+Gene:Variant
+```
+
+Example:
+
+```
+BRCA1:185delAG
+```
+
+3. The program searches the database and returns the **clinical significance**.
+
+---
+
+## ⚙️ Technologies Used
+
+* Java
+* HashMap (for variant database simulation)
+* Basic bioinformatics concepts
+
+---
+
+## 📂 Project Structure
+
+```
+clinvar-variant-java
+│
+├── VariantAnnotator.java
+├── README.md
+```
+
+---
+
+## 🔬 Bioinformatics Relevance
+
+Variant annotation is an important step in **NGS (Next Generation Sequencing) pipelines**.
+Tools like **ClinVar, ANNOVAR, and VEP** are commonly used to determine the **clinical significance of genetic mutations**.
+
+This project demonstrates the **basic concept behind such tools**.
+
+---
+
+## 🚀 Future Improvements
+
+* Support for **VCF files**
+* Integration with **NCBI ClinVar API**
+* Add **variant pathogenicity prediction**
+* Build a **web interface**
+
+---
+
+## 👩‍💻 Author
+
+Ashwini Sharma
+MSc Bioinformatics Student
+
+Interested in **AI + Bioinformatics + Genomics**
+
+---
