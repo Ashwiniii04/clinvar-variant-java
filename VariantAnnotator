@@ -1,0 +1,45 @@
+import java.util.HashMap;
+import java.util.Map;
+
+class Solution {
+
+    static Map<String, String> clinvarDB = new HashMap<>();
+
+    // Initialize database
+    static {
+        clinvarDB.put("BRCA1:185delAG", "Pathogenic");
+        clinvarDB.put("TP53:R175H", "Likely Pathogenic");
+        clinvarDB.put("CFTR:F508del", "Pathogenic");
+        clinvarDB.put("BRCA2:6174delT", "Pathogenic");
+    }
+
+    public static String annotateVariant(String gene, String variant) {
+        String key = gene + ":" + variant;
+
+        if (clinvarDB.containsKey(key)) {
+            return clinvarDB.get(key);
+        } else {
+            return "Unknown significance";
+        }
+    }
+
+    public static void main(String[] args) {
+
+        String[][] variants = {
+                {"BRCA1", "185delAG"},
+                {"TP53", "R175H"},
+                {"CFTR", "F508del"},
+                {"BRCA2", "6174delT"},
+                {"EGFR", "L858R"}
+        };
+
+        for (String[] v : variants) {
+            String gene = v[0];
+            String variant = v[1];
+
+            String result = annotateVariant(gene, variant);
+
+            System.out.println("Variant: " + gene + " " + variant + " -> " + result);
+        }
+    }
+}
